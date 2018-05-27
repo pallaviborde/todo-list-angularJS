@@ -1,0 +1,39 @@
+.main{
+	background-color: #a3bfed;
+	text-align: center;
+}
+
+.list{
+	text-align: center;
+	margin: auto;
+	display: table;
+	padding: 10px;
+}
+h2{
+	text-align: center;
+}
+
+.show-mode{
+	display: inline-block;
+}
+.edit-mode{
+	display: inline-block;
+}
+.delete-todo{
+	display: inline-block;
+}
+
+.button {
+    width: 50px;
+    height: 10px;
+    background: #4E9CAF;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+.unstyled{
+	text-align: left;
+}
+

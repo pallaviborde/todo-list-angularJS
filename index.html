@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <script src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <!-- <h2>Your Todo List</h2> -->
+    <div class="main" ng-controller="TodoListController as todoList">
+      <h2>Your Todo List</h2>
+      <h2>You have <span>{{todoList.todos.length}}</span>
+      <span ng-show="todoList.todos.length == 1">task</span>
+      <span ng-show="todoList.todos.length != 1">tasks</span>	
+      </h2>
+      <form ng-submit="todoList.addTodo()">
+        <input type="text" ng-model="todoList.todoText" 
+               placeholder="add new task here">
+        <input type="submit" value="Add">
+
+      </form>
+      <div class="list">
+      <ul class="unstyled">
+        <li ng-repeat="todo in todoList.todos">
+            <div class="edit-mode" ng-show="todo.edit">
+            	<input type="text" ng-model="todo.text">
+            	<a href="" class="button" ng-click="todo.edit=false">Save</a>
+            </div>
+            <div class="show-mode" ng-show="!todo.edit">
+            	{{todo.text}}
+            	<a href="" class="button" ng-click="todo.edit=true">Edit</a>
+            </div>
+            <div class="delete-todo">
+            	<a href="" class="button" ng-click="todoList.removeTodo(todo)">Delete</a>
+            </div>
+          </label>
+          <br>
+          <br>
+        </li>
+      </ul>
+      </div>
+      <div class="list">
+      <a href="" class="button" ng-click="todoList.clearlist()">Clear List </a>
+      </div>
+    </div>
+  </body>
+</html>
